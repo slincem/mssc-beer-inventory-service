@@ -21,7 +21,7 @@ public class RabbitMQConfig {
 
     public static final String BEER_ORDER_EXCHANGE = "beer-order-exchange";
     public static final String ALLOCATE_BEER_ORDER_QUEUE = "allocate-beer-order-queue";
-    public static final String ALLOCATE_BEER_ORDER_RESULT_QUEUE = "allocate-beer-oder-result-queue";
+    public static final String ALLOCATE_BEER_ORDER_RESULT_QUEUE = "allocate-beer-order-result-queue";
 
     public static final String BEER_ORDER_ALLOCATION_RESULT_ROUTING_KEY = "beer-order.allocate.result";
 
