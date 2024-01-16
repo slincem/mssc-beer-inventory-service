@@ -22,6 +22,7 @@ public class RabbitMQConfig {
     public static final String BEER_ORDER_EXCHANGE = "beer-order-exchange";
     public static final String ALLOCATE_BEER_ORDER_QUEUE = "allocate-beer-order-queue";
     public static final String ALLOCATE_BEER_ORDER_RESULT_QUEUE = "allocate-beer-order-result-queue";
+    public static final String DEALLOCATE_BEER_ORDER_QUEUE = "deallocate-beer-order-queue";
 
     public static final String BEER_ORDER_ALLOCATION_RESULT_ROUTING_KEY = "beer-order.allocate.result";
 
@@ -38,6 +39,12 @@ public class RabbitMQConfig {
     @Bean
     Binding binding(Queue allocateResultQueue, TopicExchange beerOrderExchange) {
         return BindingBuilder.bind(allocateResultQueue).to(beerOrderExchange).with(BEER_ORDER_ALLOCATION_RESULT_ROUTING_KEY);
+    }
+
+
+    @Bean
+    Queue deallocateBeerOrderQueue() {
+        return new Queue(DEALLOCATE_BEER_ORDER_QUEUE, false);
     }
 
     @Bean
