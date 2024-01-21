@@ -21,6 +21,7 @@ public class BeerOrderAllocationListener {
     @RabbitListener(queues = RabbitMQConfig.ALLOCATE_BEER_ORDER_QUEUE)
     private void listenBeerOrderToAllocate(AllocateBeerOrderRequest allocateBeerOrderRequest) {
 
+        log.debug("Received Allocation Request: " + allocateBeerOrderRequest);
         AllocateBeerOrderResult.AllocateBeerOrderResultBuilder allocateBeerOrderResultBuilder = AllocateBeerOrderResult.builder().beerOrderDto(allocateBeerOrderRequest.getBeerOrderDto());
 
         try {
